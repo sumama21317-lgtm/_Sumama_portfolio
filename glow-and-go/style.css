@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf7;
+    color: #392b30;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: white;
+}
+
+header h2 {
+    color: #b34d70;
+}
+
+.cart {
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #f8d9e2, #fff0e7);
+}
+
+.hero p {
+    margin: 15px;
+    color: #805365;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin: 20px 0;
+}
+
+.hero a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 13px 28px;
+    background: #a63f64;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+main {
+    padding: 55px 8%;
+    text-align: center;
+}
+
+main h2 {
+    margin-bottom: 25px;
+}
+
+.filters {
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    background: #a63f64;
+    color: white;
+    padding: 11px 18px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.product {
+    background: white;
+    padding: 18px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #00000010;
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-7px);
+}
+
+.picture {
+    background: #fae5eb;
+    font-size: 65px;
+    padding: 30px 10px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    margin: 12px 0;
+}
+
+.product p {
+    color: #a63f64;
+    font-weight: bold;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #392b30;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 450px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 18px;
+    }
+}
