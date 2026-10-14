@@ -1,65 +1,24 @@
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let count = 0;
+let total = 0;
 
-function saveTasks() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+function addToCart(price) {
+    count++;
+    total += price;
+
+    document.getElementById("count").innerText = count;
+    document.getElementById("total").innerText = total;
+
+    alert("Product added to cart!");
 }
 
-function showTasks() {
-    let list = document.getElementById("taskList");
-    list.innerHTML = "";
+function filterProducts(category) {
+    let products = document.querySelectorAll(".product");
 
-    tasks.forEach(function(task, index) {
-        let item = document.createElement("li");
-        let name = document.createElement("span");
-        let remove = document.createElement("button");
-
-        name.innerText = task.text;
-        remove.innerText = "Delete";
-
-        if (task.done) {
-            item.classList.add("done");
+    products.forEach(function(product) {
+        if (category === "all" || product.dataset.category === category) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
         }
-
-        name.onclick = function() {
-            tasks[index].done = !tasks[index].done;
-            saveTasks();
-            showTasks();
-        };
-
-        remove.onclick = function() {
-            tasks.splice(index, 1);
-            saveTasks();
-            showTasks();
-        };
-
-        item.appendChild(name);
-        item.appendChild(remove);
-        list.appendChild(item);
     });
-
-    document.getElementById("count").innerText = tasks.length;
 }
-
-function addTask() {
-    let input = document.getElementById("taskInput");
-    let text = input.value.trim();
-
-    if (text === "") {
-        alert("Please enter a task!");
-        return;
-    }
-
-    tasks.push({ text: text, done: false });
-    input.value = "";
-
-    saveTasks();
-    showTasks();
-}
-
-function clearTasks() {
-    tasks = [];
-    saveTasks();
-    showTasks();
-}
-
-showTasks();
