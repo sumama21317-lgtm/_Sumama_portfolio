@@ -1,32 +1,65 @@
-let display = document.getElementById("display");
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-function appendValue(value) {
-    display.value += value;
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-function clearDisplay() {
-    display.value = "";
-}
+function showTasks() {
+    let list = document.getElementById("taskList");
+    list.innerHTML = "";
 
-function deleteLast() {
-    display.value = display.value.slice(0, -1);
-}
+    tasks.forEach(function(task, index) {
+        let item = document.createElement("li");
+        let name = document.createElement("span");
+        let remove = document.createElement("button");
 
-function calculate() {
-    try {
-        if (display.value === "") {
-            return;
+        name.innerText = task.text;
+        remove.innerText = "Delete";
+
+        if (task.done) {
+            item.classList.add("done");
         }
 
-        if (!/^[0-9+\-*/%.() ]+$/.test(display.value)) {
-            display.value = "Invalid";
-            return;
-        }
+        name.onclick = function() {
+            tasks[index].done = !tasks[index].done;
+            saveTasks();
+            showTasks();
+        };
 
-        let result = Function('"use strict"; return (' + display.value + ')')();
+        remove.onclick = function() {
+            tasks.splice(index, 1);
+            saveTasks();
+            showTasks();
+        };
 
-        display.value = Number.isFinite(result) ? result : "Error";
-    } catch {
-        display.value = "Error";
+        item.appendChild(name);
+        item.appendChild(remove);
+        list.appendChild(item);
+    });
+
+    document.getElementById("count").innerText = tasks.length;
+}
+
+function addTask() {
+    let input = document.getElementById("taskInput");
+    let text = input.value.trim();
+
+    if (text === "") {
+        alert("Please enter a task!");
+        return;
     }
+
+    tasks.push({ text: text, done: false });
+    input.value = "";
+
+    saveTasks();
+    showTasks();
 }
+
+function clearTasks() {
+    tasks = [];
+    saveTasks();
+    showTasks();
+}
+
+showTasks();
