@@ -795,7 +795,10 @@ footer {
     }
 
     .photo-frame img {
-        height: 250px;
+    height: 280px;
+    object-fit: cover;
+    object-position: center top;
+}
     }
 }
 /* About Me Improvements */
