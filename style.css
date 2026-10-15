@@ -238,25 +238,26 @@ main {
     margin-top: 35px;
 }
 
+
 .details {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 20px;
     align-content: start;
 }
 
 .details p {
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-    overflow-wrap: anywhere;
+    min-width: 0;
 }
 
-.details b {
-    color: var(--text);
+.details p:nth-child(2) {
+    white-space: nowrap;
 }
 
-.details p span {
-    color: var(--muted);
+.details p:nth-child(2) span {
+    font-size: 12px;
+    white-space: nowrap;
+
 }
 
 .details .btn {
