@@ -1197,3 +1197,15 @@ footer {
     font-size: 13px;
 }
 
+@media (min-width: 769px) {
+    .details p:nth-child(2) {
+        white-space: nowrap;
+        font-size: 13px;
+    }
+
+    .details p:nth-child(2) span {
+        white-space: nowrap;
+        font-size: 13px;
+    }
+}
+
