@@ -1130,3 +1130,26 @@ footer {
   object-fit: contain;
   margin: 25px auto;
 }
+        
+@media (max-width: 600px) {
+    .home-img {
+        width: 220px;
+        max-width: 75vw;
+        margin: 0 auto;
+    }
+
+    .photo-frame {
+        width: 100%;
+        padding: 4px;
+        overflow: hidden;
+    }
+
+    .photo-frame img {
+        display: block;
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        object-position: center top;
+    }
+}
+
