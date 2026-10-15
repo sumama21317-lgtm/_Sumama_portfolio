@@ -1174,3 +1174,18 @@ footer {
     }
 }
 
+.details p {
+    min-width: 0;
+}
+
+.details p span {
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.details p a {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+}
+
