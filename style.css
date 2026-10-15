@@ -1168,4 +1168,34 @@ footer {
     }
 }
 
+/* Show the complete original profile image */
+@media (max-width: 600px) {
+    .home-img {
+        width: min(360px, 90vw);
+        max-width: 100%;
+        margin: 0 auto;
+        flex-shrink: 0;
+    }
+
+    .photo-frame {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        overflow: visible;
+        box-shadow: none;
+    }
+
+    .photo-frame img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 0;
+    }
+}
+
 
