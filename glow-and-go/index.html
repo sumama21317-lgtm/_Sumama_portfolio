@@ -3,63 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow & Go | Beauty Store</title>
+    <title>SmartCalc</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h2>Glow & Go</h2>
-        <div class="cart">🛍️ Cart: <span id="count">0</span> | Rs. <span id="total">0</span></div>
-    </header>
+    <div class="calculator">
+        <h2>SmartCalc</h2>
+        <input type="text" id="display" placeholder="0" readonly>
 
-    <section class="hero">
-        <p>YOUR DAILY BEAUTY ESSENTIALS</p>
-        <h1>Glow Naturally. Shine Confidently.</h1>
-        <p>Discover your new skincare favorites.</p>
-        <a href="#products">Shop Now</a>
-    </section>
+        <div class="buttons">
+            <button onclick="clearDisplay()" class="special">AC</button>
+            <button onclick="deleteLast()" class="special">DEL</button>
+            <button onclick="appendValue('%')">%</button>
+            <button onclick="appendValue('/')" class="operator">÷</button>
 
-    <main id="products">
-        <h2>Our Collection</h2>
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('*')" class="operator">×</button>
 
-        <div class="filters">
-            <button onclick="filterProducts('all')">All</button>
-            <button onclick="filterProducts('skincare')">Skincare</button>
-            <button onclick="filterProducts('makeup')">Makeup</button>
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('-')" class="operator">−</button>
+
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="appendValue('+')" class="operator">+</button>
+
+            <button onclick="appendValue('0')">0</button>
+            <button onclick="appendValue('.')">.</button>
+            <button onclick="calculate()" class="equal">=</button>
         </div>
+    </div>
 
-        <div class="products">
-            <div class="product" data-category="skincare">
-                <div class="picture">🧴</div>
-                <h3>Hydrating Serum</h3>
-                <p>Rs. 1200</p>
-                <button onclick="addToCart(1200)">Add to Cart</button>
-            </div>
-
-            <div class="product" data-category="makeup">
-                <div class="picture">💄</div>
-                <h3>Velvet Lipstick</h3>
-                <p>Rs. 850</p>
-                <button onclick="addToCart(850)">Add to Cart</button>
-            </div>
-
-            <div class="product" data-category="skincare">
-                <div class="picture">🧴</div>
-                <h3>Daily Moisturizer</h3>
-                <p>Rs. 1500</p>
-                <button onclick="addToCart(1500)">Add to Cart</button>
-            </div>
-
-            <div class="product" data-category="makeup">
-                <div class="picture">✨</div>
-                <h3>Glow Highlighter</h3>
-                <p>Rs. 950</p>
-                <button onclick="addToCart(950)">Add to Cart</button>
-            </div>
-        </div>
-    </main>
-
-    <footer>© 2026 Glow & Go | Beauty in Every Detail</footer>
     <script src="script.js"></script>
 </body>
 </html>
