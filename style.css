@@ -198,8 +198,8 @@ main {
     display: block;
     width: 100%;
     height: 360px;
-    object-fit: cover;
-    object-position: center top;
+    object-fit: fill;
+    object-position: center;
     border-radius: 50% 50% 45% 45%;
 }
 
@@ -657,7 +657,7 @@ footer {
     }
 
     .photo-frame img {
-        height: 245px;
+        height: 280px;
     }
 
     .home h1 {
