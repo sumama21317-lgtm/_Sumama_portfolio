@@ -1112,10 +1112,16 @@ footer {
     .service-grid {
         grid-template-columns: 1fr;
     }
+    @media (max-width: 768px) {
+    .profile-img {
+        width: 250px;
+        max-width: 80%;
+        height: auto;
+    }
 .profile-img {
   display: block;
-  width: 320px;
-  max-width: 100%;
+  width: 100px;
+  max-width: 350px%;
   height: auto;
   border-radius: 0;
   object-fit: contain;
