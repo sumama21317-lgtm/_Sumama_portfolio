@@ -1151,5 +1151,21 @@ footer {
         object-fit: cover;
         object-position: center top;
     }
+    
+@media (max-width: 600px) {
+    .home-img {
+        width: 280px;
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+
+    .photo-frame img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        object-fit: contain;
+        object-position: center;
+    }
 }
+
 
