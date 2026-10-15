@@ -1189,3 +1189,10 @@ footer {
     word-break: keep-all;
 }
 
+.details .email-text {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+    font-size: 13px;
+}
+
