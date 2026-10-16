@@ -430,15 +430,15 @@ main {
 }
 
 .project-one {
-    background: linear-gradient(135deg, #6d28d9, #c084fc);
+    background: linear-gradient(135deg, #7b2ff7, #e843c5);
 }
 
 .project-two {
-    background: linear-gradient(135deg, #0f766e, #5eead4);
+    background: linear-gradient(135deg, #9d4edd, #f72585);
 }
 
 .project-three {
-    background: linear-gradient(135deg, #be185d, #f9a8d4);
+    background: linear-gradient(135deg, #6c3bff, #ff4da6);
 }
 
 .project-info {
